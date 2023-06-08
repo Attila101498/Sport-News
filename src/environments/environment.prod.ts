@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://localhost:4200'
+    apiUrl: 'https://attila101498.github.io/Sport-News/'
 }
