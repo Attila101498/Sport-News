@@ -1,0 +1,90 @@
+/* Cols */
+.col-sm-12.col-md-6.col-lg-4 {
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+.col-sm-12.col-md-6.col-lg-4 a {
+    text-decoration: none;
+}
+
+
+/* Cards */
+.card {
+    transition: .3s;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.card .tag {
+    text-transform: uppercase;
+    background: #0d6efd;
+    position: absolute;
+    left: -1px;
+    top: 1.8rem;
+    padding: 0.3rem 1.2rem;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 1px 2px 5px 3px rgba(168, 168, 168, 0.75);
+}
+
+.card-body img {
+    border-radius: 0;
+}
+
+.card-body blockquote {
+    margin: 20px 0 0 0;
+    padding-left: 1.5rem;
+    border-left: 5px solid #0d6efd;
+}
+
+.card-body .card-title {
+    padding-top: 15px;
+    font-size: 16px;
+}
+
+
+/* Hr */
+hr {
+    margin: 1.5rem 0 0 0;
+}
+
+
+/* Footer */
+html[data-bs-theme='light'] div#light {
+    display: block;
+}
+
+html[data-bs-theme='light'] div#dark {
+    display: none;
+}
+
+html[data-bs-theme='dark'] div#light {
+    display: none;
+}
+
+html[data-bs-theme='dark'] div#dark {
+    display: block;
+}
+
+.footer-heading {
+    margin-top: 10px;
+}
+
+.footer-img {
+    transition: .3s;
+    margin: 10px 15px;
+    max-width: 45px;
+    cursor: pointer;
+}
+
+.footer-img:hover {
+    transform: translateY(-0.25rem);
+}
+
+.footer-text {
+    margin-bottom: 10px;
+}

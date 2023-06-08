@@ -1,0 +1,47 @@
+<h1>{{title}}</h1>
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit();">
+    <div class="row">
+        <div class="col mb-3">
+            <label for="url" class="form-label">Url</label>
+            <input type="text" formControlName="url" class="form-control" id="url"
+                [ngClass]="{ 'is-invalid': submitted && f.url.errors }">
+            <div class="invalid-feedback" *ngIf="submitted && f.url.errors">
+                <div *ngIf="f.url.errors.required">Url is required</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="type" class="form-label">Type</label>
+            <select formControlName="type" class="form-select" id="type"
+                [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                <option selected disabled value="">-- Select --</option>
+                <option value="football">Football</option>
+                <option value="rugby">Rugby</option>
+                <option value="basketball">Basketball</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="submitted && f.type.errors">
+                <div *ngIf="f.type.errors.required">Type is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3">
+            <label for="text" class="form-label">Text</label>
+            <textarea formControlName="text" class="form-control" id="text"
+                [ngClass]="{ 'is-invalid': submitted && f.text.errors }"></textarea>
+            <div class="invalid-feedback" *ngIf="submitted && f.text.errors">
+                <div *ngIf="f.text.errors.required">Text is required</div>
+                <div *ngIf="f.text.errors.minlength">Text must be at least 10 characters</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" [disabled]="submitting">
+                <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+                Save
+            </button>
+            <a routerLink="/articles" class="btn btn-link">Cancel</a>
+        </div>
+    </div>
+</form>
+<div *ngIf="loading" class="text-center m-5">
+    <span class="spinner-border spinner-border-lg align-center"></span>
+</div>

@@ -1,0 +1,11 @@
+<div class="p-4">
+    <div class="container">
+        <h1>Hi {{user.username}}!</h1>
+        <p>
+            You have successfully logged in. From here, the admin functions are available to you!
+            To continue, click on the links below or choose an option from the menu.
+        </p>
+        <p><a routerLink="/articles" id="article">Articles</a></p>
+        <p><a routerLink="/user/edit/{{user.id}}" id="user">Edit User</a></p>
+    </div>
+</div>

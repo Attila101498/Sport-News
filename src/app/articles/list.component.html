@@ -1,0 +1,46 @@
+<h1>Add Articles</h1>
+<p>
+    With the button, you can add new articles.
+</p>
+<a routerLink="add" class="btn btn-primary btn-sm mb-2" id="admin">Add Articles</a>
+
+<h1 class="mt-5">{{user.username}}'s Articles</h1>
+<p>
+    With the buttons you can edit or delete existing articles.
+</p>
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let article of articles">
+            <div class="card h-100">
+                <div class="tag"><strong>{{article.type}}</strong></div>
+                <div class="card-body">
+                    <img src="./assets/img/{{article.type}}.jpg" alt="{{article.type}}" class="img-fluid">
+                    <blockquote>{{article.username}}</blockquote>
+                    <p class="card-title">{{article.text}}</p>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <a href="{{article.url}}" target="_blank" class="btn btn-primary">
+                            Test URL
+                        </a>
+                    </div>
+                    <div id="secondDiv">
+                        <a routerLink="edit/{{article.id}}" class="btn btn-success">
+                            Edit
+                        </a>
+                        <button (click)="deleteArticle(article.id);" class="btn btn-danger"
+                            [disabled]="article.isDeleting">
+                            <span *ngIf="article.isDeleting" class="spinner-border spinner-border-sm"></span>
+                            <span *ngIf="!article.isDeleting">Delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3" *ngIf="!articles">
+        <div class="col text-center">
+            <span class="spinner-border spinner-border-lg align-center"></span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,152 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-sm-12 text-center">
+            <h1 class="mb-2">About</h1>
+            <p>
+                Welcome to the Sports News website! This page was created to make it easier and faster for the reader to
+                find out about events in the world of sports. On this page you will find a short description of the
+                sports news appearing on the <a href="https://www.bbc.com/sport" target="_blank">BBC Sport</a> page.
+                Currently, you can read about 3 sports: Football, Rugby, Basketball. If you are an editor, you can
+                create and modify articles after logging in.
+            </p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <h1 class="text-center mb-2">Latest News</h1>
+        <!-- Cards from local storage -->
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let article of articles">
+            <a href="{{article.url}}" target="_blank">
+                <div class="card h-100">
+                    <div class="tag"><strong>{{article.type}}</strong></div>
+                    <div class="card-body">
+                        <img src="./assets/img/{{article.type}}.jpg" alt="{{article.type}}" class="img-fluid">
+                        <blockquote>{{article.username}}</blockquote>
+                        <p class="card-title">{{article.text}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Example Cards -->
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="articles">
+            <a href="https://www.bbc.com/sport/rugby-union/65833566" target="_blank">
+                <div class="card h-100">
+                    <div class="tag"><strong>rugby</strong></div>
+                    <div class="card-body">
+                        <img src="./assets/img/rugby.jpg" alt="rugby" class="img-fluid">
+                        <blockquote>George</blockquote>
+                        <p class="card-title">Luke Morgan: Wales wing signs new contract to remain at Ospreys.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="articles">
+            <a href="https://www.bbc.com/sport/basketball/65785195" target="_blank">
+                <div class="card h-100">
+                    <div class="tag"><strong>basketball</strong></div>
+                    <div class="card-body">
+                        <img src="./assets/img/basketball.jpg" alt="basketball" class="img-fluid">
+                        <blockquote>Paul</blockquote>
+                        <p class="card-title">NBA Finals: Nikola Jokic powers Denver Nuggets to opening win
+                            against Miami Heat.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="articles">
+            <a href="https://www.bbc.com/sport/football/65832658" target="_blank">
+                <div class="card h-100">
+                    <div class="tag"><strong>football</strong></div>
+                    <div class="card-body">
+                        <img src="./assets/img/football.jpg" alt="football" class="img-fluid">
+                        <blockquote>Emily</blockquote>
+                        <p class="card-title">Lionel Messi to join Inter Miami after leaving Paris St-Germain.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="articles">
+            <a href="https://www.bbc.com/sport/football/65827087" target="_blank">
+                <div class="card h-100">
+                    <div class="tag"><strong>football</strong></div>
+                    <div class="card-body">
+                        <img src="./assets/img/football.jpg" alt="football" class="img-fluid">
+                        <blockquote>Tommy</blockquote>
+                        <p class="card-title">Karim Benzema agrees to join Saudi champions Al-Ittihad after Real Madrid
+                            exit.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="articles">
+            <a href="https://www.bbc.com/sport/rugby-union/65820034" target="_blank">
+                <div class="card h-100">
+                    <div class="tag"><strong>rugby</strong></div>
+                    <div class="card-body">
+                        <img src="./assets/img/rugby.jpg" alt="rugby" class="img-fluid">
+                        <blockquote>Emma</blockquote>
+                        <p class="card-title">Matt Kvesic: Ex-Worcester Warriors player sad over old club but 'excited'
+                            at Coventry move.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="articles">
+            <a href="https://www.bbc.com/sport/basketball/65737260" target="_blank">
+                <div class="card h-100">
+                    <div class="tag"><strong>basketball</strong></div>
+                    <div class="card-body">
+                        <img src="./assets/img/basketball.jpg" alt="basketball" class="img-fluid">
+                        <blockquote>Steve</blockquote>
+                        <p class="card-title">NBA play-offs: Boston Celtics beat Miami Heat 104-103 to level series at
+                            3-3.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3" *ngIf="!articles">
+        <div class="col text-center">
+            <span class="spinner-border spinner-border-lg align-center"></span>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container-fluid" id="light">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <h3 class="footer-heading">Social Media</h3>
+            <a href="https://www.facebook.com/" title="facebook" target="_blank">
+                <img src="./assets/img/logo-facebook.png" alt="facebook" class="footer-img">
+            </a>
+            <a href="https://www.instagram.com/" title="instagram" target="_blank">
+                <img src="./assets/img/logo-instagram.png" alt="instagram" class="footer-img">
+            </a>
+            <a href="https://www.twitter.com/" title="twitter" target="_blank">
+                <img src="./assets/img/logo-twitter.png" alt="twitter" class="footer-img">
+            </a>
+            <p class="footer-text">© Sport News 2023 - All rights reserved!</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="dark">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <h3 class="footer-heading">Social Media</h3>
+            <a href="https://www.facebook.com/" title="facebook" target="_blank" class="light">
+                <img src="./assets/img/logo-facebook-dark.png" alt="facebook" class="footer-img">
+            </a>
+            <a href="https://www.instagram.com/" title="instagram" target="_blank" class="light">
+                <img src="./assets/img/logo-instagram-dark.png" alt="instagram" class="footer-img">
+            </a>
+            <a href="https://www.twitter.com/" title="twitter" target="_blank" class="light">
+                <img src="./assets/img/logo-twitter-dark.png" alt="twitter" class="footer-img">
+            </a>
+            <p class="footer-text">© Sport News 2023 - All rights reserved!</p>
+        </div>
+    </div>
+</div>
