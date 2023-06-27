@@ -1,27 +1,19 @@
 # SportNews
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
-## Development server
+# Forms built with Angular Reactive Forms
+The forms in the example are built with the Reactive Forms library that comes as part of the Angular framework (in @angular/forms). It uses a model-driven approach to build, validate and handle forms in Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Shared State managed with RxJS
+RxJS Subjects and Observables are used to manage shared state in the Angular application. For example the current logged in user is managed by the account service with an RxJS BehaviorSubject and exposed to the rest of the app with an RxJS Observable that any Angular component can subscribe to and be notified when the user logs in or out.
 
-## Code scaffolding
+# Fake Backend API
+The Angular app runs with a fake backend by default to enable it to run completely in the browser without a real backend api (backend-less).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Styled with Bootstrap 5
+The app is styled with the CSS from Bootstrap 5.3.0.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# About
+On this page, we can display sports news with the help of logged-in users. We have the option of registering and logging in, both processes are validated, for example we cannot register two users with the same username.
+After logging in, we can modify our user's data and create articles, which the application will list after returning to the main page. We can also modify or delete our already created articles. We cannot modify the data of other users or their articles.
+As a plus, a light-dark mode option is also available to the user.
